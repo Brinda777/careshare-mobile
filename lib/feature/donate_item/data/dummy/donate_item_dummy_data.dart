@@ -1,0 +1,68 @@
+import 'package:care_share_nepal/core/constants/image_constants.dart';
+import 'package:care_share_nepal/feature/donate_item/data/model/donate_item_model.dart';
+
+final List<DonateItemModel> donateItemDummyData = [
+  DonateItemModel(
+    id: 101,
+    title: 'Channa',
+    image: ImageConstants.channa,
+    description: 'Channa',
+    quantity: 1,
+    unit: 'kg',
+    price: 100,
+  ),
+  DonateItemModel(
+    id: 102,
+    title: 'Jeera Rice',
+    image: ImageConstants.jerraRice,
+    description: 'Premium Jeera Rice',
+    quantity: 5,
+    unit: 'kg',
+    price: 150,
+  ),
+  DonateItemModel(
+    id: 103,
+    title: 'Mustang Aloo',
+    image: ImageConstants.mustangAllu,
+    description: 'Fresh Mustang Potatoes',
+    quantity: 2,
+    unit: 'kg',
+    price: 80,
+  ),
+  DonateItemModel(
+    id: 104,
+    title: 'Onion',
+    image: ImageConstants.onion,
+    description: 'Fresh Red Onions',
+    quantity: 1,
+    unit: 'kg',
+    price: 60,
+  ),
+  DonateItemModel(
+    id: 105,
+    title: 'Raw Sugar',
+    image: ImageConstants.rawSugar,
+    description: 'Unprocessed Raw Sugar',
+    quantity: 1,
+    unit: 'kg',
+    price: 90,
+  ),
+  DonateItemModel(
+    id: 106,
+    title: 'Sunflower Oil',
+    image: ImageConstants.sunflowerOil,
+    description: 'Pure Sunflower Oil',
+    quantity: 1,
+    unit: 'L',
+    price: 200,
+  ),
+  DonateItemModel(
+    id: 107,
+    title: 'Tokla Tea',
+    image: ImageConstants.toklaTea,
+    description: 'Premium Black Tea',
+    quantity: 500,
+    unit: 'g',
+    price: 120,
+  ),
+];
