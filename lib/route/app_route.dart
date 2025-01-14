@@ -16,6 +16,7 @@ import 'package:care_share_nepal/feature/sign_in/view/sign_in_base_view.dart';
 import 'package:care_share_nepal/feature/sign_up/view/screens/send_opt_screen.dart';
 import 'package:care_share_nepal/feature/sign_up/view/screens/set_new_password.dart';
 import 'package:care_share_nepal/feature/sign_up/view/screens/verify_otp_screen.dart';
+import 'package:care_share_nepal/feature/sign_up/view/screens/register_verify_otp_screen.dart';
 import 'package:care_share_nepal/feature/sign_up/view/sign_up_base_view.dart';
 import 'package:care_share_nepal/feature/splash/presentation/view/splash_page.dart';
 import 'package:care_share_nepal/feature/home/presentation/view/screens/volunter/become_voluner_form_base_view.dart';
@@ -32,6 +33,7 @@ class AppRouter {
   static const String signUpScreen = '/signUpScreen';
   static const String sendOptScreen = '/sendOptScreen';
   static const String verifyOtpScreen = '/verifyOtpScreen';
+  static const String registerVerifyOtpScreen = '/registerVerifyOtpScreen';
   static const String setNewPasswordScreen = '/setNewPasswordScreen';
   static const String dashboardScreen = '/dashboardScreen';
   static const String emergencyDetailScreen = '/emergencyDetailScreen';
@@ -149,6 +151,11 @@ class AppRouter {
       case verifyOtpScreen:
         return MaterialPageRoute(
           builder: (_) => const VerifyOtpScreen(),
+        );
+
+      case registerVerifyOtpScreen:
+        return MaterialPageRoute(
+          builder: (_) => const RegisterVerifyOtpScreen(),
         );
 
       case checkOutScreen:

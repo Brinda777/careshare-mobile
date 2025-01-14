@@ -29,7 +29,7 @@ class TokenDataModel with _$TokenDataModel {
 class UserDataModel with _$UserDataModel {
   const factory UserDataModel({
     required String id,
-    required String email,
+    String? email,
     required String phone,
   }) = _UserDataModel;
 

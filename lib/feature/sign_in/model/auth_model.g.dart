@@ -36,7 +36,7 @@ Map<String, dynamic> _$$TokenDataModelImplToJson(
 _$UserDataModelImpl _$$UserDataModelImplFromJson(Map<String, dynamic> json) =>
     _$UserDataModelImpl(
       id: json['id'] as String,
-      email: json['email'] as String,
+      email: json['email'] as String?,
       phone: json['phone'] as String,
     );
 

@@ -386,7 +386,7 @@ UserDataModel _$UserDataModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserDataModel {
   String get id => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
 
   /// Serializes this UserDataModel to a JSON map.
@@ -405,7 +405,7 @@ abstract class $UserDataModelCopyWith<$Res> {
           UserDataModel value, $Res Function(UserDataModel) then) =
       _$UserDataModelCopyWithImpl<$Res, UserDataModel>;
   @useResult
-  $Res call({String id, String email, String phone});
+  $Res call({String id, String? email, String phone});
 }
 
 /// @nodoc
@@ -424,7 +424,7 @@ class _$UserDataModelCopyWithImpl<$Res, $Val extends UserDataModel>
   @override
   $Res call({
     Object? id = null,
-    Object? email = null,
+    Object? email = freezed,
     Object? phone = null,
   }) {
     return _then(_value.copyWith(
@@ -432,10 +432,10 @@ class _$UserDataModelCopyWithImpl<$Res, $Val extends UserDataModel>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -452,7 +452,7 @@ abstract class _$$UserDataModelImplCopyWith<$Res>
       __$$UserDataModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String email, String phone});
+  $Res call({String id, String? email, String phone});
 }
 
 /// @nodoc
@@ -469,7 +469,7 @@ class __$$UserDataModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? email = null,
+    Object? email = freezed,
     Object? phone = null,
   }) {
     return _then(_$UserDataModelImpl(
@@ -477,10 +477,10 @@ class __$$UserDataModelImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -493,7 +493,7 @@ class __$$UserDataModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserDataModelImpl implements _UserDataModel {
   const _$UserDataModelImpl(
-      {required this.id, required this.email, required this.phone});
+      {required this.id, this.email, required this.phone});
 
   factory _$UserDataModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserDataModelImplFromJson(json);
@@ -501,7 +501,7 @@ class _$UserDataModelImpl implements _UserDataModel {
   @override
   final String id;
   @override
-  final String email;
+  final String? email;
   @override
   final String phone;
 
@@ -543,7 +543,7 @@ class _$UserDataModelImpl implements _UserDataModel {
 abstract class _UserDataModel implements UserDataModel {
   const factory _UserDataModel(
       {required final String id,
-      required final String email,
+      final String? email,
       required final String phone}) = _$UserDataModelImpl;
 
   factory _UserDataModel.fromJson(Map<String, dynamic> json) =
@@ -552,7 +552,7 @@ abstract class _UserDataModel implements UserDataModel {
   @override
   String get id;
   @override
-  String get email;
+  String? get email;
   @override
   String get phone;
 

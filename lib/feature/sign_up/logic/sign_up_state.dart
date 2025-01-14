@@ -33,6 +33,6 @@ class SignUpState with _$SignUpState {
     @Default(false) bool isConfirmPasswordObscure,
     @Default(false) bool isLoginLoading,
     @Default('') String? error,
+    @Default(null) AuthResponseModel? authResponse,
   }) = _SignUpState;
-  const SignUpState._();
 }

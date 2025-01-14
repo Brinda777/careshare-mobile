@@ -1,6 +1,10 @@
 import 'dart:async';
 
 import 'package:care_share_nepal/core/formz/formz_exports.dart';
+import 'package:care_share_nepal/core/locator/locator.dart';
+import 'package:care_share_nepal/core/service/api_service.dart';
+import 'package:care_share_nepal/feature/sign_in/model/auth_model.dart';
+import 'package:care_share_nepal/route/app_route.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -12,12 +16,15 @@ part 'sign_up_cubit.freezed.dart';
 
 part 'sign_up_state.dart';
 
+// flutter pub run build_runner build --delete-conflicting-outputs
+
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit()
       : super(
-          const SignUpState(),
+          SignUpState(),
         );
 
+  final ApiService _apiService = di<ApiService>();
   final TextEditingController phoneNumberTextController =
       TextEditingController();
 
@@ -133,5 +140,60 @@ class SignUpCubit extends Cubit<SignUpState> {
         email: const EmailFormz.pure(),
       ),
     );
+  }
+
+  Future<void> signUp({
+    required String fullName,
+    required String phone,
+    required String email,
+    required String password,
+    required BuildContext context,
+  }) async {
+    try {
+      emit(
+        state.copyWith(
+          isLoginLoading: true,
+          error: '',
+        ),
+      );
+
+      final authResponse = await _apiService.post<AuthResponseModel>(
+        data: {
+          'fullName': fullName,
+          'email': email,
+          'phone': phone,
+          'password': password
+        },
+        endpoint: 'auth/register', // Base URL already includes /objects
+        parseResponse: (data) {
+          if (data is Map<String, dynamic>) {
+            return AuthResponseModel.fromJson(data);
+          }
+          throw ApiException(message: 'Invalid response format');
+        },
+      );
+      print('signUp of the API: $authResponse');
+      emit(
+        state.copyWith(
+          authResponse: authResponse,
+          isLoginLoading: false,
+        ),
+      );
+      // Navigate to the dashboard screen on successful sign-up
+      Navigator.pushReplacementNamed(
+        context,
+        AppRouter.registerVerifyOtpScreen,
+      );
+    } on ApiException catch (e) {
+      emit(state.copyWith(
+        error: e.message,
+        isLoginLoading: false,
+      ));
+    } catch (e) {
+      emit(state.copyWith(
+        error: 'An unexpected error occurred',
+        isLoginLoading: false,
+      ));
+    }
   }
 }

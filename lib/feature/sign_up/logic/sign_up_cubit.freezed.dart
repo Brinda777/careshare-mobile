@@ -30,6 +30,7 @@ mixin _$SignUpState {
   bool get isConfirmPasswordObscure => throw _privateConstructorUsedError;
   bool get isLoginLoading => throw _privateConstructorUsedError;
   String? get error => throw _privateConstructorUsedError;
+  AuthResponseModel? get authResponse => throw _privateConstructorUsedError;
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
@@ -57,7 +58,10 @@ abstract class $SignUpStateCopyWith<$Res> {
       bool isPasswordObscure,
       bool isConfirmPasswordObscure,
       bool isLoginLoading,
-      String? error});
+      String? error,
+      AuthResponseModel? authResponse});
+
+  $AuthResponseModelCopyWith<$Res>? get authResponse;
 }
 
 /// @nodoc
@@ -88,6 +92,7 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
     Object? isConfirmPasswordObscure = null,
     Object? isLoginLoading = null,
     Object? error = freezed,
+    Object? authResponse = freezed,
   }) {
     return _then(_value.copyWith(
       fullName: null == fullName
@@ -142,7 +147,25 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
+      authResponse: freezed == authResponse
+          ? _value.authResponse
+          : authResponse // ignore: cast_nullable_to_non_nullable
+              as AuthResponseModel?,
     ) as $Val);
+  }
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AuthResponseModelCopyWith<$Res>? get authResponse {
+    if (_value.authResponse == null) {
+      return null;
+    }
+
+    return $AuthResponseModelCopyWith<$Res>(_value.authResponse!, (value) {
+      return _then(_value.copyWith(authResponse: value) as $Val);
+    });
   }
 }
 
@@ -167,7 +190,11 @@ abstract class _$$SignUpStateImplCopyWith<$Res>
       bool isPasswordObscure,
       bool isConfirmPasswordObscure,
       bool isLoginLoading,
-      String? error});
+      String? error,
+      AuthResponseModel? authResponse});
+
+  @override
+  $AuthResponseModelCopyWith<$Res>? get authResponse;
 }
 
 /// @nodoc
@@ -196,6 +223,7 @@ class __$$SignUpStateImplCopyWithImpl<$Res>
     Object? isConfirmPasswordObscure = null,
     Object? isLoginLoading = null,
     Object? error = freezed,
+    Object? authResponse = freezed,
   }) {
     return _then(_$SignUpStateImpl(
       fullName: null == fullName
@@ -250,13 +278,17 @@ class __$$SignUpStateImplCopyWithImpl<$Res>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
+      authResponse: freezed == authResponse
+          ? _value.authResponse
+          : authResponse // ignore: cast_nullable_to_non_nullable
+              as AuthResponseModel?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SignUpStateImpl extends _SignUpState with DiagnosticableTreeMixin {
+class _$SignUpStateImpl with DiagnosticableTreeMixin implements _SignUpState {
   const _$SignUpStateImpl(
       {this.fullName = const FullNameFormz.pure(),
       this.phoneNumber = const PhoneNumberFormz.pure(),
@@ -270,8 +302,8 @@ class _$SignUpStateImpl extends _SignUpState with DiagnosticableTreeMixin {
       this.isPasswordObscure = false,
       this.isConfirmPasswordObscure = false,
       this.isLoginLoading = false,
-      this.error = ''})
-      : super._();
+      this.error = '',
+      this.authResponse = null});
 
   @override
   @JsonKey()
@@ -312,10 +344,13 @@ class _$SignUpStateImpl extends _SignUpState with DiagnosticableTreeMixin {
   @override
   @JsonKey()
   final String? error;
+  @override
+  @JsonKey()
+  final AuthResponseModel? authResponse;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignUpState(fullName: $fullName, phoneNumber: $phoneNumber, email: $email, password: $password, confirmPassword: $confirmPassword, isRegisterSuccess: $isRegisterSuccess, isRegisterLoading: $isRegisterLoading, message: $message, showVisibilityIcon: $showVisibilityIcon, isPasswordObscure: $isPasswordObscure, isConfirmPasswordObscure: $isConfirmPasswordObscure, isLoginLoading: $isLoginLoading, error: $error)';
+    return 'SignUpState(fullName: $fullName, phoneNumber: $phoneNumber, email: $email, password: $password, confirmPassword: $confirmPassword, isRegisterSuccess: $isRegisterSuccess, isRegisterLoading: $isRegisterLoading, message: $message, showVisibilityIcon: $showVisibilityIcon, isPasswordObscure: $isPasswordObscure, isConfirmPasswordObscure: $isConfirmPasswordObscure, isLoginLoading: $isLoginLoading, error: $error, authResponse: $authResponse)';
   }
 
   @override
@@ -336,7 +371,8 @@ class _$SignUpStateImpl extends _SignUpState with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty(
           'isConfirmPasswordObscure', isConfirmPasswordObscure))
       ..add(DiagnosticsProperty('isLoginLoading', isLoginLoading))
-      ..add(DiagnosticsProperty('error', error));
+      ..add(DiagnosticsProperty('error', error))
+      ..add(DiagnosticsProperty('authResponse', authResponse));
   }
 
   @override
@@ -367,7 +403,9 @@ class _$SignUpStateImpl extends _SignUpState with DiagnosticableTreeMixin {
                 other.isConfirmPasswordObscure == isConfirmPasswordObscure) &&
             (identical(other.isLoginLoading, isLoginLoading) ||
                 other.isLoginLoading == isLoginLoading) &&
-            (identical(other.error, error) || other.error == error));
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.authResponse, authResponse) ||
+                other.authResponse == authResponse));
   }
 
   @override
@@ -385,7 +423,8 @@ class _$SignUpStateImpl extends _SignUpState with DiagnosticableTreeMixin {
       isPasswordObscure,
       isConfirmPasswordObscure,
       isLoginLoading,
-      error);
+      error,
+      authResponse);
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
@@ -396,7 +435,7 @@ class _$SignUpStateImpl extends _SignUpState with DiagnosticableTreeMixin {
       __$$SignUpStateImplCopyWithImpl<_$SignUpStateImpl>(this, _$identity);
 }
 
-abstract class _SignUpState extends SignUpState {
+abstract class _SignUpState implements SignUpState {
   const factory _SignUpState(
       {final FullNameFormz fullName,
       final PhoneNumberFormz phoneNumber,
@@ -410,8 +449,8 @@ abstract class _SignUpState extends SignUpState {
       final bool isPasswordObscure,
       final bool isConfirmPasswordObscure,
       final bool isLoginLoading,
-      final String? error}) = _$SignUpStateImpl;
-  const _SignUpState._() : super._();
+      final String? error,
+      final AuthResponseModel? authResponse}) = _$SignUpStateImpl;
 
   @override
   FullNameFormz get fullName;
@@ -439,6 +478,8 @@ abstract class _SignUpState extends SignUpState {
   bool get isLoginLoading;
   @override
   String? get error;
+  @override
+  AuthResponseModel? get authResponse;
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.

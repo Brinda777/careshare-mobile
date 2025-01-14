@@ -31,11 +31,11 @@ class _ProfileBaseViewState extends State<ProfileBaseView> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    // Navigator.pushNamedAndRemoveUntil(
-                    //   context,
-                    //   AppRouter.landingScreen,
-                    //   (route) => false,
-                    // );
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      AppRouter.signInScreen,
+                      (route) => false,
+                    );
                   },
                   child: SvgPicture.asset(
                     ImageConstants.exitSvg,
