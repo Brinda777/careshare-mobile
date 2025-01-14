@@ -17,7 +17,7 @@ class HomeTab extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
-        width: 80.w,
+        width: 100.w,
         height: 40.h,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -21,7 +21,7 @@ class HomeCardWidget extends StatelessWidget {
         );
       },
       child: Container(
-        height: 181.h,
+        height: 190.h,
         width: 1.sw,
         decoration: BoxDecoration(
           color: ColorConstants.cardColor,

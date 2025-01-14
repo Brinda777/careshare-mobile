@@ -25,7 +25,7 @@ class HistoryTab extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                fontSize: 14.sp,
+                fontSize: 13.sp,
                 fontWeight: FontWeight.w700,
                 color:
                     isActive ? Colors.black : ColorConstants.secondaryTextColor,
