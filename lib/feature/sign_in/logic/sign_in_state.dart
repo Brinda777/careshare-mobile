@@ -19,5 +19,6 @@ class SignInState with _$SignInState {
     @Default('') String error,
     @Default(false) bool isLoading,
     @Default([]) List<ProductModel> products,
+    @Default(null) AuthResponseModel? authResponse,
   }) = _SignInState;
 }

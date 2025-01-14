@@ -22,6 +22,7 @@ mixin _$SignInState {
   String get error => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   List<ProductModel> get products => throw _privateConstructorUsedError;
+  AuthResponseModel? get authResponse => throw _privateConstructorUsedError;
 
   /// Create a copy of SignInState
   /// with the given fields replaced by the non-null parameter values.
@@ -42,7 +43,10 @@ abstract class $SignInStateCopyWith<$Res> {
       bool isPasswordObscure,
       String error,
       bool isLoading,
-      List<ProductModel> products});
+      List<ProductModel> products,
+      AuthResponseModel? authResponse});
+
+  $AuthResponseModelCopyWith<$Res>? get authResponse;
 }
 
 /// @nodoc
@@ -66,6 +70,7 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
     Object? error = null,
     Object? isLoading = null,
     Object? products = null,
+    Object? authResponse = freezed,
   }) {
     return _then(_value.copyWith(
       phoneNumber: null == phoneNumber
@@ -92,7 +97,25 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<ProductModel>,
+      authResponse: freezed == authResponse
+          ? _value.authResponse
+          : authResponse // ignore: cast_nullable_to_non_nullable
+              as AuthResponseModel?,
     ) as $Val);
+  }
+
+  /// Create a copy of SignInState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AuthResponseModelCopyWith<$Res>? get authResponse {
+    if (_value.authResponse == null) {
+      return null;
+    }
+
+    return $AuthResponseModelCopyWith<$Res>(_value.authResponse!, (value) {
+      return _then(_value.copyWith(authResponse: value) as $Val);
+    });
   }
 }
 
@@ -110,7 +133,11 @@ abstract class _$$SignInStateImplCopyWith<$Res>
       bool isPasswordObscure,
       String error,
       bool isLoading,
-      List<ProductModel> products});
+      List<ProductModel> products,
+      AuthResponseModel? authResponse});
+
+  @override
+  $AuthResponseModelCopyWith<$Res>? get authResponse;
 }
 
 /// @nodoc
@@ -132,6 +159,7 @@ class __$$SignInStateImplCopyWithImpl<$Res>
     Object? error = null,
     Object? isLoading = null,
     Object? products = null,
+    Object? authResponse = freezed,
   }) {
     return _then(_$SignInStateImpl(
       phoneNumber: null == phoneNumber
@@ -158,6 +186,10 @@ class __$$SignInStateImplCopyWithImpl<$Res>
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<ProductModel>,
+      authResponse: freezed == authResponse
+          ? _value.authResponse
+          : authResponse // ignore: cast_nullable_to_non_nullable
+              as AuthResponseModel?,
     ));
   }
 }
@@ -171,7 +203,8 @@ class _$SignInStateImpl implements _SignInState {
       this.isPasswordObscure = true,
       this.error = '',
       this.isLoading = false,
-      final List<ProductModel> products = const []})
+      final List<ProductModel> products = const [],
+      this.authResponse = null})
       : _products = products;
 
   @override
@@ -199,8 +232,12 @@ class _$SignInStateImpl implements _SignInState {
   }
 
   @override
+  @JsonKey()
+  final AuthResponseModel? authResponse;
+
+  @override
   String toString() {
-    return 'SignInState(phoneNumber: $phoneNumber, password: $password, isPasswordObscure: $isPasswordObscure, error: $error, isLoading: $isLoading, products: $products)';
+    return 'SignInState(phoneNumber: $phoneNumber, password: $password, isPasswordObscure: $isPasswordObscure, error: $error, isLoading: $isLoading, products: $products, authResponse: $authResponse)';
   }
 
   @override
@@ -217,7 +254,9 @@ class _$SignInStateImpl implements _SignInState {
             (identical(other.error, error) || other.error == error) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            const DeepCollectionEquality().equals(other._products, _products));
+            const DeepCollectionEquality().equals(other._products, _products) &&
+            (identical(other.authResponse, authResponse) ||
+                other.authResponse == authResponse));
   }
 
   @override
@@ -228,7 +267,8 @@ class _$SignInStateImpl implements _SignInState {
       isPasswordObscure,
       error,
       isLoading,
-      const DeepCollectionEquality().hash(_products));
+      const DeepCollectionEquality().hash(_products),
+      authResponse);
 
   /// Create a copy of SignInState
   /// with the given fields replaced by the non-null parameter values.
@@ -246,7 +286,8 @@ abstract class _SignInState implements SignInState {
       final bool isPasswordObscure,
       final String error,
       final bool isLoading,
-      final List<ProductModel> products}) = _$SignInStateImpl;
+      final List<ProductModel> products,
+      final AuthResponseModel? authResponse}) = _$SignInStateImpl;
 
   @override
   PhoneNumberFormz get phoneNumber;
@@ -260,6 +301,8 @@ abstract class _SignInState implements SignInState {
   bool get isLoading;
   @override
   List<ProductModel> get products;
+  @override
+  AuthResponseModel? get authResponse;
 
   /// Create a copy of SignInState
   /// with the given fields replaced by the non-null parameter values.

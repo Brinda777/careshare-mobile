@@ -45,8 +45,8 @@ class AuthTokens {
 /// Configuration for API endpoints
 class ApiConfig {
   static const String baseUrl = String.fromEnvironment(
-    'https://api.restful-api.dev/objects',
-    defaultValue: 'https://api.restful-api.dev/objects',
+    'http://192.168.1.92:3001/',
+    defaultValue: 'http://192.168.1.92:3001/',
   );
 
   static const Duration timeoutDuration = Duration(seconds: 30);
