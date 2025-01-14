@@ -1,6 +1,7 @@
 import 'package:care_share_nepal/core/imports/ui_imports.dart';
 import 'package:care_share_nepal/feature/dashboard/logic/dashboard_cubit.dart';
 import 'package:care_share_nepal/feature/donate_item/presentation/logic/donate_item_cubit.dart';
+import 'package:care_share_nepal/feature/home/data/logic/event_cubit.dart';
 import 'package:care_share_nepal/feature/home/presentation/logic/donation_cubit.dart';
 import 'package:care_share_nepal/feature/sign_in/logic/sign_in_cubit.dart';
 import 'package:care_share_nepal/feature/sign_up/logic/sign_up_cubit.dart';
@@ -98,6 +99,9 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => DonationCubit(),
+        ),
+        BlocProvider(
+          create: (context) => EventCubit(),
         ),
       ],
       child: ScreenUtilInit(

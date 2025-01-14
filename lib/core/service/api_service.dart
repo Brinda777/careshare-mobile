@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:care_share_nepal/core/constants/api_constants.dart';
 import 'package:care_share_nepal/core/imports/ui_imports.dart';
 import 'package:dio/dio.dart';
 import 'package:fresh_dio/fresh_dio.dart';
@@ -45,8 +46,8 @@ class AuthTokens {
 /// Configuration for API endpoints
 class ApiConfig {
   static const String baseUrl = String.fromEnvironment(
-    'http://192.168.1.92:3001/',
-    defaultValue: 'http://192.168.1.92:3001/',
+    ApiEndpoint.BASE_URL,
+    defaultValue: ApiEndpoint.BASE_URL,
   );
 
   static const Duration timeoutDuration = Duration(seconds: 30);

@@ -49,7 +49,7 @@ class HomeCardWidget extends StatelessWidget {
                       ),
                       4.horizontalSpace,
                       Text(
-                        emergencyCardDataModel.address,
+                        emergencyCardDataModel.location,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
@@ -59,7 +59,7 @@ class HomeCardWidget extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    '${emergencyCardDataModel.peopleCount}+ Attending',
+                    '${emergencyCardDataModel.attendees}+ Attending',
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
@@ -76,10 +76,12 @@ class HomeCardWidget extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: ColorConstants.cardTextColor,
                 ),
+                maxLines: 1, // Limit to one line
+                overflow: TextOverflow.ellipsis, // Add ellipsis for overflow
               ),
               4.verticalSpace,
               Text(
-                emergencyCardDataModel.subtitle,
+                emergencyCardDataModel.disaster,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w400,

@@ -1,3 +1,4 @@
+import 'package:care_share_nepal/core/constants/api_constants.dart';
 import 'package:care_share_nepal/core/imports/ui_imports.dart';
 import 'package:care_share_nepal/feature/home/data/model/emergency_card_data_model.dart';
 import 'package:care_share_nepal/widgets/app_button.dart';
@@ -50,8 +51,8 @@ class _EmergencyDetailScreenState extends State<EmergencyDetailScreen> {
                             ),
                           ),
                           24.verticalSpace,
-                          Image.asset(
-                            widget.emergencyCardDataModel.image,
+                          Image.network(
+                            '${ApiEndpoint.BASE_URL}${widget.emergencyCardDataModel.image}',
                             height: 181.h,
                             width: 1.sw,
                             fit: BoxFit.cover,
@@ -78,7 +79,31 @@ class _EmergencyDetailScreenState extends State<EmergencyDetailScreen> {
                                   ),
                                 ),
                                 TextSpan(
-                                  text: widget.emergencyCardDataModel.address,
+                                  text: widget.emergencyCardDataModel.location,
+                                  style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w400,
+                                    color: ColorConstants.disabledColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          8.verticalSpace,
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Funds Raised:  ',
+                                  style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: ColorConstants.cardTextColor,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text:
+                                      'Rs. ${widget.emergencyCardDataModel.funds}',
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w400,
@@ -161,7 +186,7 @@ class DetailScreenAppBar extends StatelessWidget {
           AppButton(
             height: 30.h,
             width: 138.w,
-            text: '$impact impact',
+            text: '$impact',
             buttonColor: ColorConstants.dangerColor,
             onPressed: () {},
           )
