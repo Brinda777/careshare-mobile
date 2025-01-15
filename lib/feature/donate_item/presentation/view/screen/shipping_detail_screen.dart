@@ -1,5 +1,6 @@
 import 'package:care_share_nepal/core/imports/ui_imports.dart';
 import 'package:care_share_nepal/feature/donate_item/presentation/logic/donate_item_cubit.dart';
+import 'package:care_share_nepal/feature/home/presentation/logic/donation_cubit.dart';
 import 'package:care_share_nepal/widgets/custom_app_bar.dart';
 import 'package:care_share_nepal/feature/donate_item/presentation/view/widget/spacing_text_widget.dart';
 import 'package:care_share_nepal/widgets/app_button.dart';
@@ -84,12 +85,29 @@ class _ShippingDetailScreenState extends State<ShippingDetailScreen> {
                     AppButton(
                       text: 'Continue',
                       onPressed: () {
-                        context.read<DonateItemCubit>().clearCart();
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          AppRouter.dashboardScreen,
-                          (route) => false,
-                        );
+                        // Navigator.pushNamedAndRemoveUntil(
+                        //   context,
+                        //   AppRouter.dashboardScreen,
+                        //   (route) => false,
+                        // );
+                        if (activePaymentMethod == PaymentMethod.esewa) {
+                          context.read<DonationCubit>().initiateEsewaPayment(
+                                productId: '1d71jd81',
+                                productName: 'Product One',
+                                productPrice: '20',
+                                context: context,
+                              );
+                          context.read<DonateItemCubit>().clearCart();
+                        } else {
+                          // Other Payment methods
+                          context.read<DonationCubit>().initiateEsewaPayment(
+                                productId: '1d71jd81',
+                                productName: 'Product One',
+                                productPrice: '20',
+                                context: context,
+                              );
+                          context.read<DonateItemCubit>().clearCart();
+                        }
                       },
                     ),
                   ]);

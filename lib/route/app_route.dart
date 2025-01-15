@@ -3,6 +3,7 @@ import 'package:care_share_nepal/feature/dashboard/view/dashboard_base_view.dart
 import 'package:care_share_nepal/feature/donate_item/presentation/view/check_out_base_view.dart';
 import 'package:care_share_nepal/feature/donate_item/presentation/view/donate_item_base_view.dart';
 import 'package:care_share_nepal/feature/donate_item/presentation/view/screen/shipping_detail_screen.dart';
+import 'package:care_share_nepal/feature/history/presentation/logic/view/history_base_view.dart';
 import 'package:care_share_nepal/feature/home/data/model/emergency_card_data_model.dart';
 import 'package:care_share_nepal/feature/home/presentation/view/screens/donate_for_cause/donate_now_form_base_screen.dart';
 import 'package:care_share_nepal/feature/home/presentation/view/screens/emergency_detail_screen.dart';
@@ -49,6 +50,7 @@ class AppRouter {
   static const String changePasswordScreen = '/changePasswordScreen';
   static const String paymentSuccessScreen = '/paymentSuccessScreen';
   static const String paymentFailedScreen = '/paymentFailedScreen';
+  static const String historyScreen = '/historyScreen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     Object? argument = settings.arguments;
@@ -173,6 +175,11 @@ class AppRouter {
           builder: (_) => EmergencyDetailScreen(
             emergencyCardDataModel: argument as EmergencyCardDataModel,
           ),
+        );
+
+      case historyScreen:
+        return MaterialPageRoute(
+          builder: (_) => const HistoryBaseView(),
         );
 
       default:

@@ -137,6 +137,15 @@ class _ItemDetailsBottomSheetState extends State<ItemDetailsBottomSheet> {
                             quantity: quantity,
                           ),
                         );
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Item has been added to the cart.',
+                        ),
+                        backgroundColor: Colors.green,
+                        duration: Duration(seconds: 1),
+                      ),
+                    );
                     Navigator.pop(context);
                   },
                 ),

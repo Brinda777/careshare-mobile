@@ -62,7 +62,21 @@ class _UploadDigasterScreenState extends State<UploadDigasterScreen> {
               ),
               child: AppButton(
                 text: 'Update Disaster',
-                onPressed: () {},
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        'Your disaster report has been submitted.',
+                      ),
+                      backgroundColor: Colors.green,
+                      duration: Duration(seconds: 1),
+                    ),
+                  );
+                  Navigator.pushNamed(
+                    context,
+                    AppRouter.dashboardScreen,
+                  );
+                },
               ),
             ),
           ],

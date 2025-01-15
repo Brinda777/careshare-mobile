@@ -163,7 +163,18 @@ class _BecomeVolunterFormBaseViewState
                 ),
                 child: AppButton(
                   text: 'Submit',
-                  onPressed: () {},
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Thank you for being a volunteer.',
+                        ),
+                        backgroundColor: Colors.green,
+                        duration: Duration(seconds: 1),
+                      ),
+                    );
+                    Navigator.pop(context);
+                  },
                 ),
               ),
             ],

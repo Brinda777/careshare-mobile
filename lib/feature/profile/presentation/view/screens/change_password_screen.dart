@@ -186,7 +186,18 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                       ],
                     ),
                     AppButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Password has been changed.',
+                            ),
+                            backgroundColor: Colors.green,
+                            duration: Duration(seconds: 1),
+                          ),
+                        );
+                        Navigator.pop(context);
+                      },
                       text: 'Update',
                     ),
                   ],

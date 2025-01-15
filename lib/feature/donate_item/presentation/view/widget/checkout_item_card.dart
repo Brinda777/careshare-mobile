@@ -88,7 +88,7 @@ class CheckoutItemCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 25.w,
+                  width: 15.w,
                   child: Text(
                     cartItem.quantity.toString(),
                     textAlign: TextAlign.center,

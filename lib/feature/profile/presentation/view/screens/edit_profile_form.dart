@@ -230,6 +230,16 @@ class _EditProfileFormState extends State<EditProfileForm> {
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
                     // Handle form submission
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Profile has been updated.',
+                        ),
+                        backgroundColor: Colors.green,
+                        duration: Duration(seconds: 1),
+                      ),
+                    );
+                    Navigator.pop(context);
                   }
                 },
               ),
