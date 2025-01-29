@@ -156,6 +156,18 @@ class _ProfileBaseViewState extends State<ProfileBaseView> {
                       );
                     },
                   ),
+                  16.verticalSpace,
+                  const Divider(),
+                  16.verticalSpace,
+                  ProfileTabWIdget(
+                    title: 'Contact Us',
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        AppRouter.contactUsScreen,
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

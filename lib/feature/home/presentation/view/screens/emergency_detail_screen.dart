@@ -125,7 +125,7 @@ class _EmergencyDetailScreenState extends State<EmergencyDetailScreen> {
                           ),
                           8.verticalSpace,
                           AppButton(
-                            text: 'Became a volunteer',
+                            text: 'Become a volunteer',
                             onPressed: () {
                               Navigator.pushNamed(
                                 context,

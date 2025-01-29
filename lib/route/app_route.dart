@@ -9,6 +9,7 @@ import 'package:care_share_nepal/feature/home/presentation/view/screens/donate_f
 import 'package:care_share_nepal/feature/home/presentation/view/screens/emergency_detail_screen.dart';
 import 'package:care_share_nepal/feature/notification/view/notification_base_view.dart';
 import 'package:care_share_nepal/feature/profile/presentation/view/screens/change_password_screen.dart';
+import 'package:care_share_nepal/feature/profile/presentation/view/screens/contact_us_screen.dart';
 import 'package:care_share_nepal/feature/profile/presentation/view/screens/edit_profile_form.dart';
 import 'package:care_share_nepal/feature/report_disaster/view/report_disaster_screen.dart';
 import 'package:care_share_nepal/feature/on_boarding/presentation/view/onboarding_base_view.dart';
@@ -48,6 +49,7 @@ class AppRouter {
   static const String notificationScreen = '/notificationScreen';
   static const String editProfileFormScreen = '/editProfileFormScreen';
   static const String changePasswordScreen = '/changePasswordScreen';
+  static const String contactUsScreen = '/contactUsScreen';
   static const String paymentSuccessScreen = '/paymentSuccessScreen';
   static const String paymentFailedScreen = '/paymentFailedScreen';
   static const String historyScreen = '/historyScreen';
@@ -118,6 +120,11 @@ class AppRouter {
       case changePasswordScreen:
         return MaterialPageRoute(
           builder: (_) => const ChangePasswordWidget(),
+        );
+
+      case contactUsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ContactUsScreen(),
         );
 
       case setNewPasswordScreen:
