@@ -16,7 +16,6 @@ To run and develop this project, you must have the following versions installed:
 - **Flutter Version**: `3.24.0`
 - **Dart Version**: `3.5.0`
 
-
 ## 🚀 **Getting Started**
 
 ### Prerequisites:
