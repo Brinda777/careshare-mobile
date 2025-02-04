@@ -4,3 +4,5 @@ This is the **Mobile Application** for the **CareShareNepal** platform, designed
 
 ---
 ## 📋 **Features**
+
+- Report new disasters with location and relevant details.
