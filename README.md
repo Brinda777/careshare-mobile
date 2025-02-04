@@ -42,7 +42,6 @@ $ cd CareShareNepal-Mobile
 $ flutter pub get
 
 ```
----
 
 ## Run the App
 
