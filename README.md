@@ -10,8 +10,7 @@ This is the **Mobile Application** for the **CareShareNepal** platform, designed
 - Receive real-time updates and notifications about ongoing emergencies.
 - View donation and volunteer history.
 - User profile management with secure authentication.
-
----
+- 
 
 ## 🛠️ **Project Requirements**
 To run and develop this project, you must have the following versions installed:
