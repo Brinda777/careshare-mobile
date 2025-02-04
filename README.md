@@ -28,8 +28,6 @@ To verify the installation, run the following command:
 $ flutter doctor
 ```
 
----
-
 ## Clone the Repository
 
 ```bash
