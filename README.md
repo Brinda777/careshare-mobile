@@ -14,3 +14,7 @@ This is the **Mobile Application** for the **CareShareNepal** platform, designed
 ---
 
 ## 🛠️ **Project Requirements**
+To run and develop this project, you must have the following versions installed:
+
+- **Flutter Version**: `3.24.0`
+- **Dart Version**: `3.5.0`
