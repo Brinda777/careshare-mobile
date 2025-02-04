@@ -26,3 +26,14 @@ Make sure to install Flutter and Dart correctly by following the official instal
 ## 🚀 **Getting Started**
 
 ### Prerequisites:
+Ensure you have **Flutter** and **Dart** installed on your machine.
+
+To verify the installation, run the following command:
+
+```bash
+$ flutter doctor
+```
+
+---
+
+## Clone the Repository
