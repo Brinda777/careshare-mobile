@@ -18,3 +18,8 @@ To run and develop this project, you must have the following versions installed:
 
 - **Flutter Version**: `3.24.0`
 - **Dart Version**: `3.5.0`
+
+Make sure to install Flutter and Dart correctly by following the official installation guides:
+
+- [Flutter Installation Guide](https://docs.flutter.dev/get-started/install)
+- [Dart Installation Guide](https://dart.dev/get-dart)
