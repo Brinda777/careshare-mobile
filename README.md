@@ -10,7 +10,6 @@ This is the **Mobile Application** for the **CareShareNepal** platform, designed
 - View donation and volunteer history.
 - User profile management with secure authentication.
   
-
 ## 🛠️ **Project Requirements**
 To run and develop this project, you must have the following versions installed:
 - **Flutter Version**: `3.24.0`
