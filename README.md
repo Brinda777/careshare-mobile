@@ -10,18 +10,13 @@ This is the **Mobile Application** for the **CareShareNepal** platform, designed
 - Receive real-time updates and notifications about ongoing emergencies.
 - View donation and volunteer history.
 - User profile management with secure authentication.
-- 
+  
 
 ## 🛠️ **Project Requirements**
 To run and develop this project, you must have the following versions installed:
 
 - **Flutter Version**: `3.24.0`
 - **Dart Version**: `3.5.0`
-
-Make sure to install Flutter and Dart correctly by following the official installation guides:
-
-- [Flutter Installation Guide](https://docs.flutter.dev/get-started/install)
-- [Dart Installation Guide](https://dart.dev/get-dart)
 
 ## 🚀 **Getting Started**
 
@@ -37,3 +32,27 @@ $ flutter doctor
 ---
 
 ## Clone the Repository
+
+```bash
+$ git clone https://github.com/your-username/CareShareNepal-Mobile.git
+$ cd CareShareNepal-Mobile
+```
+
+---
+## Install Dependencies
+
+```bash
+
+$ flutter pub get
+
+```
+---
+
+## Run the App
+
+```bash
+
+$ flutter run
+
+```
+
