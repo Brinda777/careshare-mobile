@@ -35,7 +35,6 @@ $ git clone https://github.com/your-username/CareShareNepal-Mobile.git
 $ cd CareShareNepal-Mobile
 ```
 
----
 ## Install Dependencies
 
 ```bash
